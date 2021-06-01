@@ -2,10 +2,10 @@ package app
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tannpv/bookstore_oauth-api/src/http"
-	"github.com/tannpv/bookstore_oauth-api/src/repository/db"
-	"github.com/tannpv/bookstore_oauth-api/src/repository/rest"
-	"github.com/tannpv/bookstore_oauth-api/src/services/access_token"
+	"github.com/southern-martin/oauth-api/src/http"
+	"github.com/southern-martin/oauth-api/src/repository/db"
+	"github.com/southern-martin/oauth-api/src/repository/rest"
+	"github.com/southern-martin/oauth-api/src/service/access_token"
 )
 
 var (

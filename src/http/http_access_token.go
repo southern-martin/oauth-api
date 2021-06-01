@@ -2,9 +2,9 @@ package http
 
 import (
 	"github.com/gin-gonic/gin"
-	atDomain "github.com/tannpv/bookstore_oauth-api/src/domain/access_token"
-	"github.com/tannpv/bookstore_oauth-api/src/services/access_token"
-	"github.com/tannpv/bookstore_utils-go/rest_errors"
+	atDomain "github.com/southern-martin/oauth-api/src/domain/access_token"
+	"github.com/southern-martin/oauth-api/src/service/access_token"
+	"github.com/southern-martin/utils-go/rest_error"
 	"net/http"
 )
 

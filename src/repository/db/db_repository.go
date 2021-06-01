@@ -3,9 +3,9 @@ package db
 import (
 	"errors"
 	"github.com/gocql/gocql"
-	"github.com/tannpv/bookstore_oauth-api/src/clients/cassandra"
-	"github.com/tannpv/bookstore_oauth-api/src/domain/access_token"
-	"github.com/tannpv/bookstore_utils-go/rest_errors"
+	"github.com/southern-martin/oauth-api/src/client/cassandra"
+	"github.com/southern-martin/oauth-api/src/domain/access_token"
+	"github.com/southern-martin/util-go/rest_error"
 )
 
 const (
