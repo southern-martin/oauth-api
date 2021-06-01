@@ -17,7 +17,7 @@ func TestLoginUserTimeoutFromApi(t *testing.T) {
 	rest.FlushMockups()
 	rest.AddMockups(&rest.Mock{
 		HTTPMethod:   http.MethodPost,
-		URL:          "https://api.bookstore.com/users/login",
+		URL:          "https://api.bookstore.com/user/login",
 		ReqBody:      `{"email":"email@gmail.com","password":"the-password"}`,
 		RespHTTPCode: -1,
 		RespBody:     `{}`,
@@ -37,7 +37,7 @@ func TestLoginUserInvalidErrorInterface(t *testing.T) {
 	rest.FlushMockups()
 	rest.AddMockups(&rest.Mock{
 		HTTPMethod:   http.MethodPost,
-		URL:          "https://api.bookstore.com/users/login",
+		URL:          "https://api.bookstore.com/user/login",
 		ReqBody:      `{"email":"email@gmail.com","password":"the-password"}`,
 		RespHTTPCode: http.StatusNotFound,
 		RespBody:     `{"message": "invalid login credentials", "status": "404", "error": "not_found"}`,
@@ -57,7 +57,7 @@ func TestLoginUserInvalidLoginCredentials(t *testing.T) {
 	rest.FlushMockups()
 	rest.AddMockups(&rest.Mock{
 		HTTPMethod:   http.MethodPost,
-		URL:          "https://api.bookstore.com/users/login",
+		URL:          "https://api.bookstore.com/user/login",
 		ReqBody:      `{"email":"email@gmail.com","password":"the-password"}`,
 		RespHTTPCode: http.StatusNotFound,
 		RespBody:     `{"message": "invalid login credentials", "status": 404, "error": "not_found"}`,
@@ -77,7 +77,7 @@ func TestLoginUserInvalidUserJsonResponse(t *testing.T) {
 	rest.FlushMockups()
 	rest.AddMockups(&rest.Mock{
 		HTTPMethod:   http.MethodPost,
-		URL:          "https://api.bookstore.com/users/login",
+		URL:          "https://api.bookstore.com/user/login",
 		ReqBody:      `{"email":"email@gmail.com","password":"the-password"}`,
 		RespHTTPCode: http.StatusOK,
 		RespBody:     `{"id": "1", "first_name": "Fede", "last_name": "León", "email": "fedeleon.cba@gmail.com"}`,
@@ -90,14 +90,14 @@ func TestLoginUserInvalidUserJsonResponse(t *testing.T) {
 	assert.Nil(t, user)
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusInternalServerError, err.Status)
-	assert.EqualValues(t, "error when trying to unmarshal users login response", err.Message)
+	assert.EqualValues(t, "error when trying to unmarshal user login response", err.Message)
 }
 
 func TestLoginUserNoError(t *testing.T) {
 	rest.FlushMockups()
 	rest.AddMockups(&rest.Mock{
 		HTTPMethod:   http.MethodPost,
-		URL:          "https://api.bookstore.com/users/login",
+		URL:          "https://api.bookstore.com/user/login",
 		ReqBody:      `{"email":"email@gmail.com","password":"the-password"}`,
 		RespHTTPCode: http.StatusOK,
 		RespBody:     `{"id": 1, "first_name": "Fede", "last_name": "León", "email": "fedeleon.cba@gmail.com"}`,

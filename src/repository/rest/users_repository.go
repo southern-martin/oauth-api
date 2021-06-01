@@ -32,7 +32,7 @@ func (r *usersRepository) LoginUser(email string, password string) (*users.User,
 		Password: password,
 	}
 
-	response := usersRestClient.Post("/users/login", request)
+	response := usersRestClient.Post("/user/login", request)
 
 	if response == nil || response.Response == nil {
 		return nil, rest_errors.NewInternalServerError("invalid restclient response when trying to login user", errors.New("restclient error"))
@@ -48,7 +48,7 @@ func (r *usersRepository) LoginUser(email string, password string) (*users.User,
 
 	var user users.User
 	if err := json.Unmarshal(response.Bytes(), &user); err != nil {
-		return nil, rest_errors.NewInternalServerError("error when trying to unmarshal users login response", errors.New("json parsing error"))
+		return nil, rest_errors.NewInternalServerError("error when trying to unmarshal user login response", errors.New("json parsing error"))
 	}
 	return &user, nil
 }
