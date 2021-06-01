@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	atDomain "github.com/southern-martin/oauth-api/src/domain/access_token"
 	"github.com/southern-martin/oauth-api/src/service/access_token"
-	"github.com/southern-martin/utils-go/rest_error"
+	"github.com/southern-martin/util-go/rest_error"
 	"net/http"
 )
 
