@@ -5,7 +5,7 @@ import (
 	"github.com/southern-martin/oauth-api/src/util/crypto_util"
 	"github.com/southern-martin/user-api/utils/crypto_util"
 	"github.com/southern-martin/util-go/rest_error"
-	"github.com/southern-martin/utils-go/rest_error"
+	"github.com/southern-martin/util-go/rest_error"
 	"strings"
 	"time"
 )
