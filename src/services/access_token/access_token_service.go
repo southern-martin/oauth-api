@@ -1,10 +1,10 @@
 package access_token
 
 import (
-	"github.com/federicoleon/bookstore_oauth-api/src/domain/access_token"
-	"github.com/federicoleon/bookstore_oauth-api/src/repository/db"
-	"github.com/federicoleon/bookstore_oauth-api/src/repository/rest"
-	"github.com/federicoleon/bookstore_utils-go/rest_errors"
+	"github.com/southern-martin/oauth-api/src/domain/access_token"
+	"github.com/southern-martin/oauth-api/src/repository/db"
+	"github.com/southern-martin/oauth-api/src/repository/rest"
+	"github.com/southern-martin/util-go/rest_errors"
 	"strings"
 )
 
